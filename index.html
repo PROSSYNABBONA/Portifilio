@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nabbona Prossy | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ebdcdc;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #550dda;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nabbona Prossy</h1>
+        <p>Software Engineer | Entrepreneur | Leader</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate software engineer with experience in web development,UI/UX ,cloud computing, Manchine Learning.Frameworks like Laravel,Django,Flutter And <br>languages like java ,python, html, css, javascript,<br> Databases like MYSQL</p>   </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Django Hostel management System</li>
+            <li>Laravel Student management System</li>
+ 
+            <li>National ICT Hub Dashboard</li>
+            <li>Zahreen Enterprises Website</li>
+            <li>CI/CD Pipeline for Flask Applications</li>
+            <li>UI/UX Projects  <a href="https://www.canva.com/design/DAGF73m23rY/t4OvguQsHcq-HCoQSP-I4g/edit?ui=eyJEIjp7IlAiOnsiQiI6ZmFsc2V9fX0">Canva designs</a> <br> <a href="https://www.figma.com/files/team/1410624578317475780/recents-and-sharing?fuid=1172814601572845509">Figma designs</a></li>
+
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
