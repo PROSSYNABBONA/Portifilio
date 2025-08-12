@@ -6,105 +6,380 @@
     <title> Nabbona Prossy | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ebdcdc;
-            text-align: center;
+        @keyframes scroll-slider {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
+        .profile-slider {
+            /* ...existing styles... */
+            animation: scroll-slider 18s linear infinite;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
+        html {
+            scroll-behavior: smooth;
         }
-        nav ul li {
-            display: inline;
-            margin: 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
+        .portfolio-section {
+            margin: 32px auto;
+            padding: 24px 0;
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+            max-width: 900px;
         }
-        button {
-            background: #333;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #550dda;
-        }
+    </style>
     </style>
 </head>
 <body>
     <header>
-        <h1>Nabbona Prossy</h1>
-        <p>Software Engineer | Entrepreneur | Leader</p>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div class="profile-slider-container">
+                    <!-- Removed left arrow button -->
+                    <div class="profile-slider" style="display: flex; gap: 24px; justify-content: center; align-items: center;">
+                        <img src="WhatsApp Image 2025-08-07 at 16.20.40_3184c854.jpg" alt="Profile 1" class="profile-slide">
+                        <img src="IMG-20240323-WA0012.jpg" alt="Profile 2" class="profile-slide">
+                        <img src="IMG-20240323-WA0014.jpg" alt="Profile 3" class="profile-slide">
+                        <img src="IMG_20240707_113211_311.webp" alt="Profile 4" class="profile-slide">
+                        <img src="HIX_1388.jpg" alt="Profile 5" class="profile-slide">
+                    </div>
+                    <!-- Removed right arrow button -->
+                </div>
+            <h1 id="main-title">Nabbona Prossy</h1>
+            <p id="typed-text">Software Engineer | Entrepreneur | Leader</p>
+            <p style="font-size:1.1rem; color:#e3eeff; margin: 0 0 8px 0; opacity:0.85;">Building digital solutions for a better tomorrow</p>
+            <div style="display: flex; gap: 18px; margin: 8px 0 0 0;">
+                <a href="mailto:prossynabbona@gmail.com" title="Email" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                <a href="https://www.linkedin.com/in/nabbona-prossy-174560254/" title="LinkedIn" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 11v5M8 8v.01M12 11v5M16 11v5"/></svg></a>
+                <a href="https://x.com/NabbonaProssy" title="Twitter" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.02-4.52 4.52 0 .35.04.7.11 1.03C7.69 5.4 4.07 3.7 1.64 1.15c-.38.65-.6 1.4-.6 2.2 0 1.52.77 2.86 1.94 3.65A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.55 1.7 2.16 2.94 4.07 2.97A9.06 9.06 0 0 1 0 19.54a12.8 12.8 0 0 0 6.92 2.03c8.3 0 12.85-6.87 12.85-12.85 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 23 3z"/></svg></a>
+                <a href="https://github.com/PROSSYNABBONA" title="GitHub" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+            </div>
+        </div>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <nav style="display: flex; justify-content: center;">
+        <ul style="display: flex; gap: 32px; align-items: center; list-style: none; padding: 0; margin: 0;">
+            <li><a href="#about" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128100;</span> About</a></li>
+            <li><a href="#projects" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128187;</span> Projects</a></li>
+            <li><a href="#certificates" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127942;</span> Certificates</a></li>
+            <li><a href="#skills" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#9881;&#65039;</span> Skills</a></li>
+            <li><a href="#experience" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128188;</span> Experience</a></li>
+            <li><a href="#education" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127891;</span> Education/Resume</a></li>
+            <li><a href="#hobbies" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127912;</span> Hobbies</a></li>
+            <li><a href="#contact" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#9993;&#65039;</span> Contact</a></li>
         </ul>
     </nav>
     
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a passionate software engineer with experience in web development,UI/UX ,cloud computing, Manchine Learning.Frameworks like Laravel,Django,Flutter And <br>languages like java ,python, html, css, javascript,<br> Databases like MYSQL</p>   </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>Django Hostel management System</li>
-            <li>Laravel Student management System</li>
- 
-            <li>National ICT Hub Dashboard</li>
-            <li>Zahreen Enterprises Website</li>
-            <li>CI/CD Pipeline for Flask Applications</li>
-            <li>UI/UX Projects  <a href="https://www.canva.com/design/DAGF73m23rY/t4OvguQsHcq-HCoQSP-I4g/edit?ui=eyJEIjp7IlAiOnsiQiI6ZmFsc2V9fX0">Canva designs</a> <br> <a href="https://www.figma.com/files/team/1410624578317475780/recents-and-sharing?fuid=1172814601572845509">Figma designs</a></li>
-
-        </ul>
+        <p>
+            I am a passionate software engineer with experience in web development,mobile application development, UI/UX, Artificial intelligence,cloud computing, and machine learning.<br>
+            I work with frameworks like <b>Laravel</b>, <b>React</b>, <b>Django</b>, <b>Flutter</b> and languages such as <b>Java</b>, <b>Python</b>, <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>,<b>PHP</b>.<br>
+            I am also skilled in databases like <b>MySQL</b> and enjoy building scalable, user-friendly solutions.
+        </p>
     </section>
     
+    
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Haraka website and Haraka System development(HTML,CSS,JS)</h3>
+                
+                <a href="https://haraka.co.ug" target="_blank" class="project-link">View Website</a>
+                <a href="https://haraka.co.ug/HMS/" target="_blank" class="project-link">View System</a>
+            </div>
+            <div class="project-card">
+                <h3>Feyti website and system management(React frameworks)</h3>
+                <a href="https://feytimedicalgroup.com/index.html" target="_blank" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Laravel laravel-project-Hostel-management Management System</h3>
+                <a href="https://github.com/PROSSYNABBONA/laravel-project-Hostel-management.git" target="_blank" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Flutter School management syetem</h3>
+                <a href="https://github.com/PROSSYNABBONA/Flutter-School-Management-Application-.git" target="_blank" class="project-link">View Details</a>
+            </div>
+        <div class="project-card">
+                <h3>Kotlin Home management application</h3>
+                <a href="https://github.com/PROSSYNABBONA/SmartHomeKotlinAppFinalWork.git" target="_blank" class="project-link">View Details</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>Zahreen Enterprises Website</h3>
+                <a href="https://prossynabbona.github.io/Zahreen-Enterprises-Website/" target="_blank" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Final year Project</h3>
+                <a href="https://github.com/mwegyesa/Group_BSE24-23.git" target="_blank" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>UICT Clinical Dashboard</h3>
+                <a href="https://prossynabbona.github.io/Enhanced-UICT-clinic/" target="_blank" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>National ICT HUB Admin and innovator dashbord</h3>
+                <a href="https://prossynabbona.github.io/Enhanced-Natiotional-ict-hub-Project/" target="_blank" class="project-link">View Details</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>UI/UX Projects</h3>
+                <a href="https://www.canva.com/design/DAGF73m23rY/t4OvguQsHcq-HCoQSP-I4g/edit?ui=eyJEIjp7IlAiOnsiQiI6ZmFsc2V9fX0" target="_blank" class="project-link">Canva designs</a>
+                <a href="https://www.figma.com/files/team/1410624578317475780/recents-and-sharing?fuid=1172814601572845509" target="_blank" class="project-link">Figma designs</a>
+            </div>
+        </div>
+    </section>
+    <section id="certificates">
+        <h2>Certificates</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 18px;">
+            <div style="background: #f3e7e9; border-radius: 10px; box-shadow: 0 2px 12px #550dda11; padding: 18px 24px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
+                <span style="font-size:2em;">&#127942;</span>
+                <img src="code queen cer.png" alt="Code Queen Hakathon Certificate" class="certificate-img" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; margin: 10px 0; cursor: pointer; box-shadow: 0 2px 8px #550dda22;" onclick="openCertModal('code queen cer.png')">
+                <h3 style="margin: 10px 0 6px 0;">Code Queen Hakathon</h3>
+                <p style="margin: 0; font-size: 1em;">Worked on projects using html, css, js and merged as the second best. </p>
+            </div>
+            <div style="background: #f3e7e9; border-radius: 10px; box-shadow: 0 2px 12px #550dda11; padding: 18px 24px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
+                <span style="font-size:2em;">&#127942;</span>
+                <img src="women cer.png" alt="Women Entrepreneur Certificate" class="certificate-img" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; margin: 10px 0; cursor: pointer; box-shadow: 0 2px 8px #550dda22;" onclick="openCertModal('women cer.png')">
+                <h3 style="margin: 10px 0 6px 0;">Women Entrepreneur Certificate</h3>
+                <p style="margin: 0; font-size: 1em;">Awarded because of my Entrepreneurship skills with artificial intelligence at ideation coner</p>
+            </div>
+            <div style="background: #f3e7e9; border-radius: 10px; box-shadow: 0 2px 12px #550dda11; padding: 18px 24px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
+                <span style="font-size:2em;">&#127942;</span>
+                <img src="impact cer.png" alt="Impact Week Certificate" class="certificate-img" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; margin: 10px 0; cursor: pointer; box-shadow: 0 2px 8px #550dda22;" onclick="openCertModal('impact cer.png')">
+                <h3 style="margin: 10px 0 6px 0;">Impact week</h3>
+                <p style="margin: 0; font-size: 1em;">A week of genarating differnt ideas and making software prototypes</p>
+            </div>
+        </div>
+
+        <!-- Modal for certificate image -->
+        <div id="certModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+            <span onclick="closeCertModal()" style="position:absolute; top:24px; right:36px; color:#fff; font-size:2.5em; cursor:pointer; z-index:10001;">&times;</span>
+            <img id="certModalImg" src="" alt="Certificate Full" style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 4px 32px #000a; background:#fff;">
+        </div>
+    </section>
+    <div class="portfolio-section">
+        <section id="skills">
+            <h2>Skills Summary</h2>
+            <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <li>Management Skills</li>
+                <li>Git</li>
+                <li>Mobile App Development</li>
+                <li>UI and Web Development</li>
+                <li>Creativity</li>
+                <li>Critical Thinking</li>
+                <li>Leadership</li>
+                <li>API</li>
+                <li>Laravel</li>
+                <li>Graphics Designing</li>
+                <li>Communication Skill</li>
+                <li>Team Work</li>
+            </ul>
+           
+        </section>
+    </div>
+
+    <div class="portfolio-section">
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
+                <li>
+                    <strong>Internship at Haraka Solutions Limited</strong> (April  2025)<br>
+                    <em>Worked on  websites and Management system</em>
+                </li>
+                <li>
+                    <strong>Internship at Kola Technologies</strong> (September - November 2023)<br>
+                    <em>Learnt to interact and use Linux operating systems and Odoo technologies.</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Internship at Cognosphere Dynamics Ltd</strong> (May - July 2024)<br>
+                    <em>Worked on various projects using Git, HTML, CSS, JavaScript, Bootstrap, making websites responsive, worked on APIs, Laravel.</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Worked at Zahreen Limited</strong> (2024)<br>
+                    <em>Frontend Developer and Secretary.</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Code Queen Hackathon</strong> (April - June 2023)<br>
+                    <em>Learnt HTML, CSS, JavaScript and practical projects.</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Impact Week</strong> (One week)<br>
+                    <em>Learnt prototyping, ideation, decision making, and teamwork. Worked on different projects.</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Class Projects and Recess</strong><br>
+                    <em>Learnt Laravel, Django, Kotlin, Flutter app development from class projects.</em>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="portfolio-section">
+        <section id="education">
+            <h2>Education & Resume</h2>
+            <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
+                <li>
+                    <strong>Bachelor of Science in Software Engineering</strong><br>
+                    Makerere University (2021 - current)<br>
+                    <em>Completed studies, awaiting graduation in January 2026.</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Bishop Ciprianoa Kihangire SSS/</strong><br>
+                    <em>O Level to A Level</em>
+                </li>
+                <li style="margin-top: 16px;">
+                    <strong>Bishop Cipriano Kihangire Primary</strong><br>
+                    <em>Primary One to Primary Seven</em>
+                </li>
+            </ul>
+            
+            <p><a href="Nabbona Prossy CV.pdf" target="_blank" style="color: #333; text-decoration: underline;">Download My Resume (PDF)</a></p>
+        </section>
+    </div>
+    <div class="portfolio-section">
+        <section id="hobbies">
+           
+            <h2 style="margin-top:2em;">Hobbies & Interests</h2>
+            <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <li>Reading Tech Blogs</li>
+                <li>Photography</li>
+                <li>Traveling</li>
+                <li>Volunteering</li>
+                <li>Music</li>
+                <li>Learning New Languages</li>
+            </ul>
+        </section>
+    </div>
     <section id="contact">
+
+    
+    
         <h2>Contact Me</h2>
-        <form id="contactForm">
+    <form id="contactForm" autocomplete="off" method="POST" action="send_mail.php">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-            
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-            
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            
             <button type="submit">Send</button>
         </form>
     </section>
+    <footer>
+        &copy; <span id="year"></span> Nabbona Prossy. All rights reserved.
+    </footer>
     
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you for reaching out! I will get back to you soon.');
-            this.reset();
+        // Certificate modal logic
+        function openCertModal(src) {
+            document.getElementById('certModalImg').src = src;
+            document.getElementById('certModal').style.display = 'flex';
+        }
+        function closeCertModal() {
+            document.getElementById('certModal').style.display = 'none';
+        }
+
+        // Reveal on scroll logic
+        const revealElements = document.querySelectorAll('section, footer');
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < windowHeight - 60) {
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                } else {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(40px)';
+                }
+            });
+        }
+        revealElements.forEach(el => {
+            el.style.transition = 'all 0.7s cubic-bezier(.23,1.01,.32,1)';
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(40px)';
         });
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Interactive nav highlight on scroll
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = Array.from(document.querySelectorAll('section'));
+        function highlightNav() {
+            let index = sections.length - 1;
+            for (let i = 0; i < sections.length; i++) {
+                if (window.scrollY + 80 < sections[i].offsetTop) {
+                    index = i - 1;
+                    break;
+                }
+            }
+            navLinks.forEach((link, i) => {
+                if (i === index) {
+                    link.style.color = '#333';
+                    link.style.textShadow = '0 2px 8px #550dda33';
+                } else {
+                    link.style.color = '#550dda';
+                    link.style.textShadow = 'none';
+                }
+            });
+        }
+        window.addEventListener('scroll', highlightNav);
+        window.addEventListener('load', highlightNav);
+
+        // Button ripple effect
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const circle = document.createElement('span');
+                circle.className = 'ripple';
+                const rect = btn.getBoundingClientRect();
+                circle.style.left = (e.clientX - rect.left) + 'px';
+                circle.style.top = (e.clientY - rect.top) + 'px';
+                btn.appendChild(circle);
+                setTimeout(() => circle.remove(), 600);
+            });
+        });
+
+        // Animate project cards in grid
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach((card, i) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(40px)';
+            card.style.transition = `all 0.6s cubic-bezier(.23,1.01,.32,1) ${i * 0.08 + 0.2}s`;
+        });
+        function revealProjects() {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection.getBoundingClientRect().top < window.innerHeight - 80) {
+                projectCards.forEach(card => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                });
+            }
+        }
+        window.addEventListener('scroll', revealProjects);
+        window.addEventListener('load', revealProjects);
+
+    // Contact form handler removed for real PHP submission
+
+    // AJAX contact form handler
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var form = this;
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'send_mail.php', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+                form.reset();
+            } else {
+                alert('There was an error sending your message. Please try again later.');
+            }
+        };
+        xhr.send(formData);
+    });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

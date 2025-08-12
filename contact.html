@@ -69,8 +69,19 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Thank you for reaching out! I will get back to you soon.');
-            this.reset();
+            var form = this;
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'send_mail.php', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    alert(xhr.responseText);
+                    form.reset();
+                } else {
+                    alert('There was an error sending your message. Please try again later.');
+                }
+            };
+            xhr.send(formData);
         });
     </script>
 </body>
