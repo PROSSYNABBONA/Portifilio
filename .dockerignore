@@ -1,0 +1,16 @@
+# Ignore git and node files
+.git
+.gitmodules
+.gitignore
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+*.md
+*.log
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.DS_Store
+.vscode
