@@ -30,20 +30,25 @@
 </head>
 <body>
     <header>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; position: relative;">
                 <div class="profile-slider-container">
-                    <!-- Removed left arrow button -->
-                    <div class="profile-slider" style="display: flex; gap: 24px; justify-content: center; align-items: center;">
+                    <div class="profile-slider" id="profileSlider">
                         <img src="profile1.jpg" alt="Profile 1" class="profile-slide">
                         <img src="profile2.jpg" alt="Profile 2" class="profile-slide">
                         <img src="profile3.jpg" alt="Profile 3" class="profile-slide">
                         <img src="profile4.webp" alt="Profile 4" class="profile-slide">
                         <img src="profile5.jpg" alt="Profile 5" class="profile-slide">
                     </div>
-                    <!-- Removed right arrow button -->
+                    <div class="slider-dots" id="sliderDots"></div>
                 </div>
             <h1 id="main-title">Nabbona Prossy</h1>
-            <p id="typed-text">Software Engineer | Entrepreneur | Leader</p>
+            <!-- Hamburger menu icon -->
+            <button id="menu-toggle" aria-label="Open navigation menu" style="display:none;position:absolute;top:10px;right:10px;background:none;border:none;cursor:pointer;z-index:1001;">
+                <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
+                <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
+                <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
+            </button>
+            <p id="typed-text"></p>
             <p style="font-size:1.1rem; color:#e3eeff; margin: 0 0 8px 0; opacity:0.85;">Building digital solutions for a better tomorrow</p>
             <div style="display: flex; gap: 18px; margin: 8px 0 0 0;">
                 <a href="mailto:prossynabbona@gmail.com" title="Email" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></a>
@@ -54,8 +59,8 @@
         </div>
     </header>
     
-    <nav style="display: flex; justify-content: center;">
-        <ul style="display: flex; gap: 32px; align-items: center; list-style: none; padding: 0; margin: 0;">
+    <nav id="main-nav" style="display: flex; justify-content: center;">
+        <ul id="nav-links" style="display: flex; gap: 32px; align-items: center; list-style: none; padding: 0; margin: 0;">
             <li><a href="#about" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128100;</span> About</a></li>
             <li><a href="#projects" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128187;</span> Projects</a></li>
             <li><a href="#certificates" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127942;</span> Certificates</a></li>
@@ -66,6 +71,7 @@
             <li><a href="#contact" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#9993;&#65039;</span> Contact</a></li>
         </ul>
     </nav>
+
     
     <section id="about">
         <h2>About Me</h2>
@@ -380,6 +386,119 @@
 
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
+        // Hamburger menu toggle for mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinksMenu = document.getElementById('nav-links');
+        function checkMenuDisplay() {
+            if (window.innerWidth <= 800) {
+                menuToggle.style.display = 'block';
+                navLinksMenu.style.display = 'none';
+            } else {
+                menuToggle.style.display = 'none';
+                navLinksMenu.style.display = 'flex';
+            }
+        }
+        menuToggle.addEventListener('click', function() {
+            if (navLinksMenu.style.display === 'none' || navLinksMenu.style.display === '') {
+                navLinksMenu.style.display = 'flex';
+                navLinksMenu.style.flexDirection = 'column';
+                navLinksMenu.style.position = 'absolute';
+                navLinksMenu.style.top = '60px';
+                navLinksMenu.style.right = '10px';
+                navLinksMenu.style.background = '#fff';
+                navLinksMenu.style.boxShadow = '0 4px 16px #0002';
+                navLinksMenu.style.padding = '18px 24px';
+                navLinksMenu.style.borderRadius = '8px';
+                navLinksMenu.style.zIndex = '1000';
+            } else {
+                navLinksMenu.style.display = 'none';
+            }
+        });
+        window.addEventListener('resize', checkMenuDisplay);
+        window.addEventListener('load', checkMenuDisplay);
+        // Hide menu after clicking a link (on mobile)
+        navLinksMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 800) {
+                    navLinksMenu.style.display = 'none';
+                }
+            });
+        });
+        // Typewriter effect for roles
+        const roles = [
+            'Software Engineer',
+            'Entrepreneur',
+            'Leader',
+            'Mobile Developer',
+            'Web Developer',
+            'Tech Enthusiast'
+            
+        ];
+        const typedText = document.getElementById('typed-text');
+        let roleIndex = 0;
+        let charIndex = 0;
+        let typing = true;
+
+        function typeRole() {
+            if (typing) {
+                if (charIndex < roles[roleIndex].length) {
+                    typedText.innerHTML = '<b>' + roles[roleIndex].slice(0, charIndex + 1) + '</b>';
+                    charIndex++;
+                    setTimeout(typeRole, 80);
+                } else {
+                    typing = false;
+                    setTimeout(typeRole, 1200);
+                }
+            } else {
+                if (charIndex > 0) {
+                    typedText.innerHTML = '<b>' + roles[roleIndex].slice(0, charIndex - 1) + '</b>';
+                    charIndex--;
+                    setTimeout(typeRole, 40);
+                } else {
+                    typing = true;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setTimeout(typeRole, 400);
+                }
+            }
+        }
+        typeRole();
+
+        // Modern profile slider logic
+const slider = document.getElementById('profileSlider');
+const slides = Array.from(slider.querySelectorAll('.profile-slide'));
+const dotsContainer = document.getElementById('sliderDots');
+let current = 0;
+function updateSlider() {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev', 'next');
+        if (i === current) {
+            slide.classList.add('active');
+        } else if (i === (current - 1 + slides.length) % slides.length) {
+            slide.classList.add('prev');
+        } else if (i === (current + 1) % slides.length) {
+            slide.classList.add('next');
+        }
+    });
+    // Dots
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'slider-dot' + (i === current ? ' active' : '');
+        dot.addEventListener('click', () => {
+            current = i;
+            updateSlider();
+        });
+        dotsContainer.appendChild(dot);
+    });
+}
+function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateSlider();
+}
+let sliderInterval = setInterval(nextSlide, 3500);
+slider.addEventListener('mouseenter', () => clearInterval(sliderInterval));
+slider.addEventListener('mouseleave', () => sliderInterval = setInterval(nextSlide, 3500));
+updateSlider();
     </script>
 </body>
 </html>

@@ -1,3 +1,101 @@
+/* Modern profile slider styles */
+.profile-slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 18px;
+    position: relative;
+    width: 340px;
+    max-width: 98vw;
+}
+.profile-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+    height: 160px;
+    position: relative;
+    overflow: visible;
+}
+.profile-slide {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    box-shadow: 0 2px 18px #550dda33;
+    object-fit: cover;
+    margin: 0 -32px;
+    background: #fff;
+    opacity: 0.5;
+    filter: blur(1.5px) grayscale(30%);
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(.23,1.01,.32,1);
+    border: 3px solid transparent;
+}
+.profile-slide.active {
+    width: 140px;
+    height: 140px;
+    opacity: 1;
+    filter: none;
+    z-index: 2;
+    border: 3px solid #550dda;
+    box-shadow: 0 4px 32px #550dda33;
+}
+.profile-slide.prev, .profile-slide.next {
+    opacity: 0.8;
+    filter: blur(0.5px) grayscale(10%);
+    z-index: 1;
+    width: 110px;
+    height: 110px;
+    border: 3px solid #e3eeff;
+}
+.profile-slide:not(.active):not(.prev):not(.next) {
+    opacity: 0.2;
+    pointer-events: none;
+    filter: blur(2px) grayscale(60%);
+}
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e3eeff;
+    border: 2px solid #550dda;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.slider-dot.active {
+    background: #550dda;
+}
+@media (max-width: 500px) {
+    .profile-slider-container, .profile-slider {
+        width: 98vw;
+        min-width: 0;
+    }
+    .profile-slide.active {
+        width: 100px;
+        height: 100px;
+    }
+    .profile-slide, .profile-slide.prev, .profile-slide.next {
+        width: 70px;
+        height: 70px;
+    }
+}
+/* Hamburger menu styles for mobile */
+@media (max-width: 800px) {
+    #menu-toggle {
+        display: block !important;
+    }
+    nav ul#nav-links {
+        display: none !important;
+    }
+}
 @media (max-width: 700px) {
     nav ul {
         flex-direction: column !important;
