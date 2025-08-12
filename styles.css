@@ -93,7 +93,7 @@
         display: block !important;
     }
     nav ul#nav-links {
-        display: none !important;
+        display: none;
     }
 }
 @media (max-width: 700px) {
