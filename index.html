@@ -29,11 +29,13 @@
         <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; position: relative;">
                 <div class="profile-slider-container">
                     <div class="profile-slider" id="profileSlider">
-                        <img src="profile1.jpg" alt="Profile 1" class="profile-slide">
-                        <img src="profile2.jpg" alt="Profile 2" class="profile-slide">
-                        <img src="profile3.jpg" alt="Profile 3" class="profile-slide">
-                        <img src="profile4.webp" alt="Profile 4" class="profile-slide">
-                        <img src="profile5.jpg" alt="Profile 5" class="profile-slide">
+                        <div class="profile-slider-inner" id="profileSliderInner">
+                            <img src="profile1.jpg" alt="Profile 1" class="profile-slide">
+                            <img src="profile2.jpg" alt="Profile 2" class="profile-slide">
+                            <img src="profile3.jpg" alt="Profile 3" class="profile-slide">
+                            <img src="profile4.webp" alt="Profile 4" class="profile-slide">
+                            <img src="profile5.jpg" alt="Profile 5" class="profile-slide">
+                        </div>
                     </div>
                     <div class="slider-dots" id="sliderDots"></div>
                 </div>
@@ -45,7 +47,7 @@
                 <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
             </button>
             <p id="typed-text"></p>
-            <p style="font-size:1.1rem; color:#e3eeff; margin: 0 0 8px 0; opacity:0.85;">Building digital solutions for a better tomorrow</p>
+            <p class="subtitle-center">Building digital solutions for a better tomorrow</p>
             <div style="display: flex; gap: 18px; margin: 8px 0 0 0;">
                 <a href="mailto:prossynabbona@gmail.com" title="Email" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></a>
                 <a href="https://www.linkedin.com/in/nabbona-prossy-174560254/" title="LinkedIn" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 11v5M8 8v.01M12 11v5M16 11v5"/></svg></a>
@@ -461,19 +463,14 @@
 
         // Modern profile slider logic
 const slider = document.getElementById('profileSlider');
-const slides = Array.from(slider.querySelectorAll('.profile-slide'));
+const sliderInner = document.getElementById('profileSliderInner');
+const slides = Array.from(sliderInner.querySelectorAll('.profile-slide'));
 const dotsContainer = document.getElementById('sliderDots');
 let current = 0;
+
 function updateSlider() {
     slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'prev', 'next');
-        if (i === current) {
-            slide.classList.add('active');
-        } else if (i === (current - 1 + slides.length) % slides.length) {
-            slide.classList.add('prev');
-        } else if (i === (current + 1) % slides.length) {
-            slide.classList.add('next');
-        }
+        slide.classList.toggle('active', i === current);
     });
     // Dots
     dotsContainer.innerHTML = '';
