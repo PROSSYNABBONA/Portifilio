@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Nabbona Prossy | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles.css?v=3">
 	<style>
         html {
             scroll-behavior: smooth;
@@ -306,19 +306,41 @@
 			if (e.target === this) closeCertModal();
 		});
 
-		// Reveal on scroll logic with IntersectionObserver
-		const revealTargets = document.querySelectorAll('section, footer');
-		revealTargets.forEach(el => el.classList.add('reveal'));
-		const revealObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('reveal-visible');
+		// Reveal on scroll logic with robust fallbacks
+		(function() {
+			const revealTargets = document.querySelectorAll('section, footer');
+			revealTargets.forEach(el => el.classList.add('reveal'));
+			function forceVisible() {
+				revealTargets.forEach(el => {
+					el.classList.add('reveal-visible');
+					el.style.opacity = 1;
+					el.style.transform = 'translateY(0)';
+				});
+			}
+			try {
+				if ('IntersectionObserver' in window) {
+					const revealObserver = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('reveal-visible');
+							}
+						});
+					}, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+					revealTargets.forEach(el => revealObserver.observe(el));
+					// Safety timeout: ensure visibility if observer never fires (e.g., CSP/script errors)
+					setTimeout(() => {
+						const anyHidden = Array.from(revealTargets).some(el => !el.classList.contains('reveal-visible'));
+						if (anyHidden) forceVisible();
+					}, 1200);
 				} else {
-					entry.target.classList.remove('reveal-visible');
+					// No IntersectionObserver support
+					forceVisible();
 				}
-			});
-		}, { threshold: 0.15 });
-		revealTargets.forEach(el => revealObserver.observe(el));
+			} catch (e) {
+				// Any runtime error: ensure content is visible
+				forceVisible();
+			}
+		})();
 
 		// Interactive nav highlight using IntersectionObserver
         const navLinks = document.querySelectorAll('nav a');
