@@ -22,4 +22,5 @@ RUN chown -R www-data:www-data /var/www/html
 EXPOSE 80
 
 # Start Apache in the foreground
-CMD ["apache2-foreground"]
+# Render sets a dynamic $PORT; update Apache to listen on it at runtime
+CMD ["/bin/sh", "-c", "set -e; : ${PORT:=80}; sed -i \"s/^Listen 80$/Listen ${PORT}/\" /etc/apache2/ports.conf; sed -i \"s/:80>/:${PORT}>/\" /etc/apache2/sites-available/000-default.conf || true; exec apache2-foreground"]
