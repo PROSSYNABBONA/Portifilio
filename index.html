@@ -391,6 +391,17 @@
         // Hamburger menu toggle for mobile
         const menuToggle = document.getElementById('menu-toggle');
         const navLinksMenu = document.getElementById('nav-links');
+		function resetNavInlineStyles() {
+			navLinksMenu.style.flexDirection = '';
+			navLinksMenu.style.position = '';
+			navLinksMenu.style.top = '';
+			navLinksMenu.style.right = '';
+			navLinksMenu.style.background = '';
+			navLinksMenu.style.boxShadow = '';
+			navLinksMenu.style.padding = '';
+			navLinksMenu.style.borderRadius = '';
+			navLinksMenu.style.zIndex = '';
+		}
         function checkMenuDisplay() {
             if (window.innerWidth <= 800) {
                 menuToggle.style.display = 'block';
@@ -398,8 +409,10 @@
 				menuToggle.setAttribute('aria-expanded', 'false');
             } else {
                 menuToggle.style.display = 'none';
-                navLinksMenu.style.display = 'flex';
+				navLinksMenu.style.display = 'flex';
 				menuToggle.setAttribute('aria-expanded', 'false');
+				// Ensure desktop layout isn't affected by previous mobile inline styles
+				resetNavInlineStyles();
             }
         }
         menuToggle.addEventListener('click', function() {
@@ -416,7 +429,7 @@
                 navLinksMenu.style.zIndex = '1000';
 				menuToggle.setAttribute('aria-expanded', 'true');
             } else {
-                navLinksMenu.style.display = 'none';
+				navLinksMenu.style.display = 'none';
 				menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
@@ -426,7 +439,8 @@
         navLinksMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 800) {
-                    navLinksMenu.style.display = 'none';
+					navLinksMenu.style.display = 'none';
+					resetNavInlineStyles();
 					menuToggle.setAttribute('aria-expanded', 'false');
                 }
             });
