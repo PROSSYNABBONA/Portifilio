@@ -150,7 +150,7 @@ p { margin: 0 0 1em; }
   box-shadow: 0 1px 0 var(--line), 0 50px 80px -40px rgba(26, 20, 40, .55), 0 18px 30px -22px rgba(26, 20, 40, .35);
 }
 .photo-mat img {
-  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%;
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 12%;
   border-radius: 50% 50% 19px 19px / 40% 40% 19px 19px;
   background: var(--violet-soft);
 }
