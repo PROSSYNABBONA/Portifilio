@@ -1,542 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Nabbona Prossy | Portfolio</title>
-	<link rel="stylesheet" href="styles.css?v=3">
-	<style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .portfolio-section {
-            margin: 32px auto;
-            padding: 24px 0;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
-			max-width: 1100px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nabbona Prossy | Frontend Developer</title>
+  <meta name="description" content="Nabbona Prossy — Angular frontend developer in Kampala building property management, SACCO, grants and BI platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
-	<div class="bg-aurora" aria-hidden="true"></div>
-	<div class="bg-dots" aria-hidden="true"></div>
-    <header>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; position: relative;">
-                <div class="profile-slider-container">
-                    <div class="profile-slider" id="profileSlider">
-                        <div class="profile-slider-inner" id="profileSliderInner">
-                            <img src="profile1.jpg" alt="Profile 1" class="profile-slide">
-                            <img src="profile2.jpg" alt="Profile 2" class="profile-slide">
-                            <img src="profile3.jpg" alt="Profile 3" class="profile-slide">
-                            <img src="profile4.webp" alt="Profile 4" class="profile-slide">
-                            <img src="profile5.jpg" alt="Profile 5" class="profile-slide">
-                        </div>
-                    </div>
-                    <div class="slider-dots" id="sliderDots"></div>
-                </div>
-            <h1 id="main-title">Nabbona Prossy</h1>
-            <!-- Hamburger menu icon -->
-            <button id="menu-toggle" aria-label="Open navigation menu" style="position:absolute;top:10px;right:10px;background:none;border:none;cursor:pointer;z-index:1001;">
-                <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
-                <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
-                <span style="display:block;width:28px;height:4px;background:#550dda;margin:5px 0;border-radius:2px;"></span>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="#top" class="brand" aria-label="Nabbona Prossy, back to top">NP</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">
+        <span class="sr-only">Menu</span>
+        <span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav id="siteNav" class="site-nav" aria-label="Main">
+        <a href="#work">Experience</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#recognition">Certificates</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-small" href="Nabbona Prossy CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="status"><span class="dot" aria-hidden="true"></span> Frontend Developer at Omni Software</p>
+          <h1 class="hero-name"><span>Nabbona</span><span>Prossy</span></h1>
+          <p class="hero-lede">
+            <span class="sr-only">I build Angular frontends for property management, SACCO, grants and business-intelligence platforms, and wire them to the Spring Boot, Keycloak and Camunda services behind them.</span>
+            <span aria-hidden="true">I build Angular frontends for <span class="rotator" id="rotator"><span class="on">property management</span><span>SACCOs &amp; finance</span><span>grants programmes</span><span>business intelligence</span></span> — and wire them to the Spring Boot, Keycloak and Camunda services behind them.</span>
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">See my work</a>
+            <a class="btn btn-ghost" href="Nabbona Prossy CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          </div>
+          <ul class="socials" aria-label="Find me online">
+            <li><a href="mailto:prossienabbona20@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/nabbona-prossy-174560254/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/PROSSYNABBONA" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://x.com/NabbonaProssy" target="_blank" rel="noopener">X</a></li>
+          </ul>
+        </div>
+        <figure class="hero-photo" id="heroPhoto">
+          <div class="photo-tilt" id="photoTilt">
+            <div class="photo-back" aria-hidden="true"></div>
+            <div class="photo-mat">
+              <img src="profile1.jpg" alt="Nabbona Prossy smiling outdoors" width="960" height="1280">
+            </div>
+            <div class="photo-badge" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <defs><path id="badgeRing" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+                <text><textPath href="#badgeRing" textLength="280" lengthAdjust="spacing">Frontend developer ✦ Angular ✦ Kampala ✦ </textPath></text>
+              </svg>
+              <span>NP</span>
+            </div>
+            <figcaption>Based in Kampala, Uganda</figcaption>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap two-col">
+        <h2>About</h2>
+        <div class="prose">
+          <p>I'm a frontend developer specialising in Angular, with hands-on experience delivering production applications for property management, financial inclusion, grants management and business intelligence clients.</p>
+          <p>I'm comfortable across the stack, and I bring a quality mindset to the work: JMeter load testing, Lighthouse audits and Power BI reporting are part of how I ship. I hold a BSc in Software Engineering from Makerere University.</p>
+          <p class="muted">Outside work: music, photography, travel and reading about tech.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="work">
+      <div class="wrap two-col">
+        <h2>Experience</h2>
+        <ol class="timeline">
+          <li class="current">
+            <div class="when">Nov 2025 – Present</div>
+            <h3>Frontend Developer</h3>
+            <p class="org">Omni Software Limited, Kampala</p>
+            <ul>
+              <li>Build and maintain Angular (standalone + signals) frontends for client platforms on the Omnitech gateway: Amaka Trust, KengaMIS/SNV, Sacco Wave and ABIFMS.</li>
+              <li>Integrate and troubleshoot Spring Boot / MongoDB services, Keycloak authentication and Camunda BPMN workflows end to end.</li>
+              <li>Design MongoDB collections and JSON schema validators, and import programme data from Excel into structured collections.</li>
+              <li>Plan and run JMeter load, stress, spike and endurance tests on Sacco Wave, and turn results into optimisation reports.</li>
+              <li>Design Power BI dashboards, including the Heifer Uganda Country Dashboard, using OData feeds and star-schema models.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="when">Apr 2025 – Oct 2025</div>
+            <h3>Frontend &amp; Backend Developer</h3>
+            <p class="org">Haraka Solutions Limited</p>
+            <ul>
+              <li>Developed full-stack web features in HTML, CSS, JavaScript and PHP across the full development life cycle.</li>
+              <li>Built a cross-platform mobile application in Flutter.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="when">Apr 2025 – Jul 2025</div>
+            <h3>Frontend Developer Intern (React)</h3>
+            <p class="org">Feyti Medical Group</p>
+            <ul>
+              <li>Built and maintained React frontend features and supported related backend work.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="when">May 2024 – Jul 2024</div>
+            <h3>Frontend Developer Intern</h3>
+            <p class="org">Cognosphere Dynamics Ltd</p>
+            <ul>
+              <li>Built responsive websites with HTML, CSS, JavaScript and Bootstrap, using Git for version control.</li>
+              <li>Integrated Laravel REST APIs into client-facing pages.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="when">2024</div>
+            <h3>Frontend Developer &amp; Secretary</h3>
+            <p class="org">Zahreen Limited</p>
+            <ul><li>Supported web frontend work alongside administrative duties.</li></ul>
+          </li>
+          <li>
+            <div class="when">Sep – Nov 2023</div>
+            <h3>IT Intern</h3>
+            <p class="org">Kola Technologies</p>
+            <ul><li>Hands-on experience with Linux systems and Odoo ERP.</li></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="section section-ink" id="platforms">
+      <div class="wrap">
+        <div class="two-col">
+          <h2>Client platforms</h2>
+          <p class="prose">Production systems I build and support at Omni Software. These are private client platforms, so there are no public links.</p>
+        </div>
+        <dl class="platforms">
+          <div>
+            <dt>Amaka Trust</dt>
+            <dd class="kind">Property management</dd>
+            <dd>Angular frontend for managing properties, tenants and related workflows.</dd>
+          </div>
+          <div>
+            <dt>KengaMIS / SNV</dt>
+            <dd class="kind">Grants management</dd>
+            <dd>Grantee dashboards with Highcharts, plus programme data imports into MongoDB.</dd>
+          </div>
+          <div>
+            <dt>Sacco Wave</dt>
+            <dd class="kind">SACCO &amp; financial inclusion</dd>
+            <dd>Frontend work and a full JMeter performance-testing programme.</dd>
+          </div>
+          <div>
+            <dt>ABIFMS</dt>
+            <dd class="kind">Financial management</dd>
+            <dd>Angular frontend on the Omnitech gateway stack.</dd>
+          </div>
+          <div>
+            <dt>Heifer Uganda</dt>
+            <dd class="kind">Business intelligence</dd>
+            <dd>Country dashboard in Power BI built on OData feeds and a star-schema model.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="two-col">
+          <h2>Projects</h2>
+          <p class="prose">Websites, systems and apps I've built for clients, at university and on my own.</p>
+        </div>
+
+        <div class="project-groups">
+          <div class="group">
+            <h3 class="group-title">Websites &amp; client systems</h3>
+            <ul class="project-list">
+              <li>
+                <div><span class="p-name">Haraka website &amp; management system</span><span class="p-stack">HTML, CSS, JavaScript, PHP</span></div>
+                <div class="p-links"><a href="https://haraka.co.ug" target="_blank" rel="noopener">Website</a><a href="https://haraka.co.ug/HMS/" target="_blank" rel="noopener">System</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Feyti Medical Group website</span><span class="p-stack">React</span></div>
+                <div class="p-links"><a href="https://feytimedicalgroup.com/" target="_blank" rel="noopener">Website</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Professional veterinary services</span><span class="p-stack">HTML, CSS, JavaScript, Bootstrap</span></div>
+                <div class="p-links"><a href="https://dr-gonzaga-bakulumpagi.onrender.com/" target="_blank" rel="noopener">Website</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Zahreen Enterprises website</span><span class="p-stack">Car financing &amp; property mortgages</span></div>
+                <div class="p-links"><a href="https://prossynabbona.github.io/Zahreen-Enterprises-Website/" target="_blank" rel="noopener">Website</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <h3 class="group-title">Dashboards &amp; management systems</h3>
+            <ul class="project-list">
+              <li>
+                <div><span class="p-name">UICT clinic dashboard</span><span class="p-stack">Web dashboard</span></div>
+                <div class="p-links"><a href="https://prossynabbona.github.io/Enhanced-UICT-clinic/" target="_blank" rel="noopener">Live</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">National ICT Hub admin &amp; innovator dashboard</span><span class="p-stack">Web dashboard</span></div>
+                <div class="p-links"><a href="https://prossynabbona.github.io/Enhanced-Natiotional-ict-hub-Project/" target="_blank" rel="noopener">Live</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Patient care system</span><span class="p-stack">React</span></div>
+                <div class="p-links"><a href="https://patientcare.great-site.net/Karen%20work/public/" target="_blank" rel="noopener">Live</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">School management system</span><span class="p-stack">PHP, HTML, Bootstrap</span></div>
+                <div class="p-links"><a href="https://schoolmanagementsystemgroupwork.netlify.app/" target="_blank" rel="noopener">Live</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Hostel management system</span><span class="p-stack">Laravel</span></div>
+                <div class="p-links"><a href="https://github.com/PROSSYNABBONA/laravel-project-Hostel-management.git" target="_blank" rel="noopener">Code</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Final year project</span><span class="p-stack">Group project, BSE 24-23</span></div>
+                <div class="p-links"><a href="https://github.com/mwegyesa/Group_BSE24-23.git" target="_blank" rel="noopener">Code</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <h3 class="group-title">Mobile</h3>
+            <ul class="project-list">
+              <li>
+                <div><span class="p-name">School management app</span><span class="p-stack">Flutter</span></div>
+                <div class="p-links"><a href="https://github.com/PROSSYNABBONA/Flutter-School-Management-Application-.git" target="_blank" rel="noopener">Code</a></div>
+              </li>
+              <li>
+                <div><span class="p-name">Smart home management app</span><span class="p-stack">Kotlin</span></div>
+                <div class="p-links"><a href="https://github.com/PROSSYNABBONA/SmartHomeKotlinAppFinalWork.git" target="_blank" rel="noopener">Code</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <h3 class="group-title">UI/UX design</h3>
+            <ul class="project-list">
+              <li>
+                <div><span class="p-name">Interface and graphic designs</span><span class="p-stack">Figma, Canva</span></div>
+                <div class="p-links"><a href="https://www.figma.com/files/team/1410624578317475780/recents-and-sharing?fuid=1172814601572845509" target="_blank" rel="noopener">Figma</a><a href="https://www.canva.com/design/DAGF73m23rY/t4OvguQsHcq-HCoQSP-I4g/edit?ui=eyJEIjp7IlAiOnsiQiI6ZmFsc2V9fX0" target="_blank" rel="noopener">Canva</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="wrap two-col">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill-row"><h3>Frontend</h3><ul><li>Angular</li><li>Signals</li><li>Standalone APIs</li><li>TypeScript</li><li>JavaScript</li><li>HTML / CSS</li><li>Tailwind CSS</li><li>PrimeNG</li><li>Highcharts</li><li>React</li></ul></div>
+          <div class="skill-row"><h3>Backend &amp; integration</h3><ul><li>REST APIs</li><li>Spring Boot</li><li>MongoDB</li><li>Keycloak</li><li>Camunda BPMN</li><li>Laravel</li><li>Django</li><li>PHP</li></ul></div>
+          <div class="skill-row"><h3>Mobile</h3><ul><li>Flutter</li><li>Kotlin</li></ul></div>
+          <div class="skill-row"><h3>Performance &amp; QA</h3><ul><li>JMeter</li><li>Load, stress &amp; spike tests</li><li>Endurance testing</li><li>Lighthouse</li></ul></div>
+          <div class="skill-row"><h3>Business intelligence</h3><ul><li>Power BI</li><li>DAX</li><li>OData</li><li>Star-schema modelling</li></ul></div>
+          <div class="skill-row"><h3>Tools</h3><ul><li>Git</li><li>Linux</li><li>Odoo</li><li>Figma</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section" id="recognition">
+      <div class="wrap">
+        <div class="two-col">
+          <h2>Certificates &amp; programmes</h2>
+          <p class="prose">Select a certificate to view it full size.</p>
+        </div>
+        <div class="certs">
+          <figure class="cert">
+            <button class="cert-thumb" data-src="code queen cer.png" data-title="Code Queen Hackathon certificate">
+              <img src="code queen cer.png" alt="Code Queen Hackathon certificate" loading="lazy">
             </button>
-            <p id="typed-text"></p>
-            <p class="subtitle-center">Building digital solutions for a better tomorrow</p>
-            <div style="display: flex; gap: 18px; margin: 8px 0 0 0;">
-                <a href="mailto:prossienabbona20@gmail.com" title="Email" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></a>
-                <a href="https://www.linkedin.com/in/nabbona-prossy-174560254/" title="LinkedIn" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 11v5M8 8v.01M12 11v5M16 11v5"/></svg></a>
-                <a href="https://x.com/NabbonaProssy" title="Twitter" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.02-4.52 4.52 0 .35.04.7.11 1.03C7.69 5.4 4.07 3.7 1.64 1.15c-.38.65-.6 1.4-.6 2.2 0 1.52.77 2.86 1.94 3.65A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.55 1.7 2.16 2.94 4.07 2.97A9.06 9.06 0 0 1 0 19.54a12.8 12.8 0 0 0 6.92 2.03c8.3 0 12.85-6.87 12.85-12.85 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 23 3z"/></svg></a>
-                <a href="https://github.com/PROSSYNABBONA" title="GitHub" target="_blank" style="color:#fff; font-size:1.5rem;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-            </div>
+            <figcaption>
+              <h3>Code Queen Hackathon</h3>
+              <p>Apr – Jun 2023. A three-month programme building practical HTML, CSS and JavaScript projects; finished second best.</p>
+            </figcaption>
+          </figure>
+          <figure class="cert">
+            <button class="cert-thumb" data-src="women cer.png" data-title="Women Entrepreneurship certificate">
+              <img src="women cer.png" alt="Women Entrepreneurship certificate" loading="lazy">
+            </button>
+            <figcaption>
+              <h3>Women Entrepreneurship Celebrations 2024</h3>
+              <p>Recognised for an AI-driven business idea at the ideation corner.</p>
+            </figcaption>
+          </figure>
+          <figure class="cert">
+            <button class="cert-thumb" data-src="impact cer.png" data-title="Impact Week certificate">
+              <img src="impact cer.png" alt="Impact Week certificate" loading="lazy">
+            </button>
+            <figcaption>
+              <h3>Impact Week</h3>
+              <p>Design thinking: ideation, rapid prototyping and decision-making in cross-functional teams.</p>
+            </figcaption>
+          </figure>
         </div>
-    </header>
-    
-    <nav id="main-nav" style="display: flex; justify-content: center;">
-    <ul id="nav-links" style="gap: 32px; align-items: center; list-style: none; padding: 0; margin: 0;">
-            <li><a href="#about" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128100;</span> About</a></li>
-            <li><a href="#projects" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128187;</span> Projects</a></li>
-            <li><a href="#certificates" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127942;</span> Certificates</a></li>
-            <li><a href="#skills" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#9881;&#65039;</span> Skills</a></li>
-            <li><a href="#experience" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#128188;</span> Experience</a></li>
-            <li><a href="#education" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127891;</span> Education/Resume</a></li>
-            <li><a href="#hobbies" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#127912;</span> Hobbies</a></li>
-            <li><a href="#contact" style="display: flex; align-items: center; gap: 6px;"><span style="font-size:1.2em;">&#9993;&#65039;</span> Contact</a></li>
-        </ul>
-    </nav>
-
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate software engineer with experience in web development,mobile application development, UI/UX, Artificial intelligence,cloud computing, and machine learning.<br>
-            I work with frameworks like <b>Laravel</b>, <b>React</b>, <b>Django</b>, <b>Flutter</b> and languages such as <b>Java</b>, <b>Python</b>, <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>,<b>PHP</b>.<br>
-            I am also skilled in databases like <b>MySQL</b> and enjoy building scalable, user-friendly solutions.
-        </p>
+      </div>
     </section>
-    
-    
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            
-            
-            
-            <div class="project-card">
-                <h3>Haraka website and Haraka System development(HTML,CSS,JS, PHP)</h3>
-                
-                <a href="https://haraka.co.ug" target="_blank" class="project-link">View Website</a>
-                <a href="https://haraka.co.ug/HMS/" target="_blank" class="project-link">View System</a>
-            </div>
-            <div class="project-card">
-                <h3>Feyti website and system management(React frameworks)</h3>
-                <a href="https://feytimedicalgroup.com/" target="_blank" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <h3>Professional Veterinary Services(Html,css.js,bootstrap)</h3>
-                <a href="https://dr-gonzaga-bakulumpagi.onrender.com/" target="_blank" class="project-link">View Website</a>
-            </div>
-            <div class="project-card">
-                <h3>Patient Care System(React frameworks)</h3>
-                <a href="https://patientcare.great-site.net/Karen%20work/public/" target="_blank" class="project-link">View Website</a>
-            </div>
-            <div class="project-card">
-                <h3>School Management System (Php, html, bootstrap)</h3>
-                <a href="https://schoolmanagementsystemgroupwork.netlify.app/" target="_blank" class="project-link">View Website</a>
-            </div>
-            <div class="project-card">
-                <h3>Juditial Analytics System (React frameworks)</h3>
-                <a href="https://schoolmanagementsystemgroupwork.netlify.app/" target="_blank" class="project-link">View Website</a>
-            </div>
-            <div class="project-card">
-                <h3>Laravel laravel-project-Hostel-management Management System</h3>
-                <a href="https://github.com/PROSSYNABBONA/laravel-project-Hostel-management.git" target="_blank" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <h3>Flutter School management syetem</h3>
-                <a href="https://github.com/PROSSYNABBONA/Flutter-School-Management-Application-.git" target="_blank" class="project-link">View Details</a>
-            </div>
-        <div class="project-card">
-                <h3>Kotlin Home management application</h3>
-                <a href="https://github.com/PROSSYNABBONA/SmartHomeKotlinAppFinalWork.git" target="_blank" class="project-link">View Details</a>
-            </div>
-            
-            <div class="project-card">
-                <h3>Zahreen Enterprises Website</h3>
-                <a href="https://prossynabbona.github.io/Zahreen-Enterprises-Website/" target="_blank" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <h3>Final year Project</h3>
-                <a href="https://github.com/mwegyesa/Group_BSE24-23.git" target="_blank" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <h3>UICT Clinical Dashboard</h3>
-                <a href="https://prossynabbona.github.io/Enhanced-UICT-clinic/" target="_blank" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <h3>National ICT HUB Admin and innovator dashbord</h3>
-                <a href="https://prossynabbona.github.io/Enhanced-Natiotional-ict-hub-Project/" target="_blank" class="project-link">View Details</a>
-            </div>
-            
-            <div class="project-card">
-                <h3>UI/UX Projects</h3>
-                <a href="https://www.canva.com/design/DAGF73m23rY/t4OvguQsHcq-HCoQSP-I4g/edit?ui=eyJEIjp7IlAiOnsiQiI6ZmFsc2V9fX0" target="_blank" class="project-link">Canva designs</a>
-                <a href="https://www.figma.com/files/team/1410624578317475780/recents-and-sharing?fuid=1172814601572845509" target="_blank" class="project-link">Figma designs</a>
-            </div>
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <div class="wrap two-col">
+        <h2>Education</h2>
+        <div class="edu">
+          <div>
+            <h3>BSc Software Engineering</h3>
+            <p>Makerere University, 2021 – 2026</p>
+          </div>
+          <div>
+            <h3>UACE &amp; UCE (A-Level &amp; O-Level)</h3>
+            <p>St. James Biina SS</p>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <p>English, Luganda</p>
+          </div>
         </div>
+      </div>
     </section>
-    <section id="certificates">
-        <h2>Certificates</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 18px;">
-            <div style="background: #f3e7e9; border-radius: 10px; box-shadow: 0 2px 12px #550dda11; padding: 18px 24px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
-                <span style="font-size:2em;">&#127942;</span>
-                <img src="code queen cer.png" alt="Code Queen Hakathon Certificate" class="certificate-img" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; margin: 10px 0; cursor: pointer; box-shadow: 0 2px 8px #550dda22;" onclick="openCertModal('code queen cer.png')">
-                <h3 style="margin: 10px 0 6px 0;">Code Queen Hakathon</h3>
-                <p style="margin: 0; font-size: 1em;">Worked on projects using html, css, js and merged as the second best. </p>
-            </div>
-            <div style="background: #f3e7e9; border-radius: 10px; box-shadow: 0 2px 12px #550dda11; padding: 18px 24px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
-                <span style="font-size:2em;">&#127942;</span>
-                <img src="women cer.png" alt="Women Entrepreneur Certificate" class="certificate-img" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; margin: 10px 0; cursor: pointer; box-shadow: 0 2px 8px #550dda22;" onclick="openCertModal('women cer.png')">
-                <h3 style="margin: 10px 0 6px 0;">Women Entrepreneur Certificate</h3>
-                <p style="margin: 0; font-size: 1em;">Awarded because of my Entrepreneurship skills with artificial intelligence at ideation coner</p>
-            </div>
-            <div style="background: #f3e7e9; border-radius: 10px; box-shadow: 0 2px 12px #550dda11; padding: 18px 24px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
-                <span style="font-size:2em;">&#127942;</span>
-                <img src="impact cer.png" alt="Impact Week Certificate" class="certificate-img" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; margin: 10px 0; cursor: pointer; box-shadow: 0 2px 8px #550dda22;" onclick="openCertModal('impact cer.png')">
-                <h3 style="margin: 10px 0 6px 0;">Impact week</h3>
-                <p style="margin: 0; font-size: 1em;">A week of genarating differnt ideas and making software prototypes</p>
-            </div>
+
+    <!-- CONTACT -->
+    <section class="section section-contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="contact-title">Let's work together</h2>
+          <p class="prose">Hiring for a frontend role, or need an Angular dashboard built? Send a message and I'll reply by email.</p>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:prossienabbona20@gmail.com">prossienabbona20@gmail.com</a></li>
+            <li><span>Phone</span><a href="tel:+256758624016">+256 758 624 016</a></li>
+            <li><span>Location</span>Kampala, Uganda</li>
+          </ul>
         </div>
-
-        <!-- Modal for certificate image -->
-        <div id="certModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
-            <span onclick="closeCertModal()" style="position:absolute; top:24px; right:36px; color:#fff; font-size:2.5em; cursor:pointer; z-index:10001;">&times;</span>
-            <img id="certModalImg" src="" alt="Certificate Full" style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 4px 32px #000a; background:#fff;">
-        </div>
-    </section>
-    <div class="portfolio-section">
-        <section id="skills">
-            <h2>Skills Summary</h2>
-            <ul style="list-style: disc inside; padding-left: 1.5em; max-width: 600px; margin: 0 auto; text-align: left;">
-                <li>Management Skills</li>
-                <li>Git</li>
-                <li>Mobile App Development</li>
-                <li>UI and Web Development</li>
-                <li>Creativity</li>
-                <li>Critical Thinking</li>
-                <li>Leadership</li>
-                <li>API</li>
-                <li>Laravel</li>
-                <li>Graphics Designing</li>
-                <li>Communication Skill</li>
-                <li>Team Work</li>
-            </ul>
-           
-        </section>
-    </div>
-
-    <div class="portfolio-section">
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
-                <li>
-                    <strong>Internship at Haraka Solutions Limited</strong> (April  2025)<br>
-                    <em>Worked on  websites and Management system</em>
-                </li>
-                <li>
-                    <strong>Internship at Kola Technologies</strong> (September - November 2023)<br>
-                    <em>Learnt to interact and use Linux operating systems and Odoo technologies.</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Internship at Cognosphere Dynamics Ltd</strong> (May - July 2024)<br>
-                    <em>Worked on various projects using Git, HTML, CSS, JavaScript, Bootstrap, making websites responsive, worked on APIs, Laravel.</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Worked at Zahreen Limited</strong> (2024)<br>
-                    <em>Frontend Developer and Secretary.</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Code Queen Hackathon</strong> (April - June 2023)<br>
-                    <em>Learnt HTML, CSS, JavaScript and practical projects.</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Impact Week</strong> (One week)<br>
-                    <em>Learnt prototyping, ideation, decision making, and teamwork. Worked on different projects.</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Class Projects and Recess</strong><br>
-                    <em>Learnt Laravel, Django, Kotlin, Flutter app development from class projects.</em>
-                </li>
-            </ul>
-        </section>
-    </div>
-
-    <div class="portfolio-section">
-        <section id="education">
-            <h2>Education & Resume</h2>
-            <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
-                <li>
-                    <strong>Bachelor of Science in Software Engineering</strong><br>
-                    Makerere University (2021 - current)<br>
-                    <em>Completed studies, awaiting graduation in January 2026.</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Bishop Ciprianoa Kihangire SSS/</strong><br>
-                    <em>O Level to A Level</em>
-                </li>
-                <li style="margin-top: 16px;">
-                    <strong>Bishop Cipriano Kihangire Primary</strong><br>
-                    <em>Primary One to Primary Seven</em>
-                </li>
-            </ul>
-            
-            <p><a href="Nabbona Prossy CV.pdf" target="_blank" style="color: #333; text-decoration: underline;">Download My Resume (PDF)</a></p>
-        </section>
-    </div>
-    <div class="portfolio-section">
-        <section id="hobbies">
-           
-            <h2 style="margin-top:2em;">Hobbies & Interests</h2>
-            <ul style="list-style: disc inside; padding-left: 1.5em; max-width: 600px; margin: 0 auto; text-align: left;">
-                <li>Reading Tech Blogs</li>
-                <li>Photography</li>
-                <li>Traveling</li>
-                <li>Volunteering</li>
-                <li>Music</li>
-                <li>Learning New Languages</li>
-            </ul>
-        </section>
-    </div>
-    <section id="contact">
-
-    
-    
-        <h2>Contact Me</h2>
-    <form id="contactForm" autocomplete="off" method="POST" action="send_mail.php">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
+        <form id="contactForm" class="contact-form" method="POST" action="send_mail.php" novalidate>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit" class="btn">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
+      </div>
     </section>
-    <footer>
-        &copy; <span id="year"></span> Nabbona Prossy. All rights reserved.
-    </footer>
-    
-    <script>
-		// Certificate modal logic
-        function openCertModal(src) {
-            document.getElementById('certModalImg').src = src;
-            document.getElementById('certModal').style.display = 'flex';
-        }
-        function closeCertModal() {
-            document.getElementById('certModal').style.display = 'none';
-        }
-		// Close certificate modal on ESC and backdrop click
-		document.addEventListener('keydown', function(e) {
-			if (e.key === 'Escape') closeCertModal();
-		});
-		document.getElementById('certModal').addEventListener('click', function(e) {
-			if (e.target === this) closeCertModal();
-		});
+  </main>
 
-		// Reveal on scroll logic with robust fallbacks
-		(function() {
-			const revealTargets = document.querySelectorAll('section, footer');
-			revealTargets.forEach(el => el.classList.add('reveal'));
-			function forceVisible() {
-				revealTargets.forEach(el => {
-					el.classList.add('reveal-visible');
-					el.style.opacity = 1;
-					el.style.transform = 'translateY(0)';
-				});
-			}
-			try {
-				if ('IntersectionObserver' in window) {
-					const revealObserver = new IntersectionObserver((entries) => {
-						entries.forEach(entry => {
-							if (entry.isIntersecting) {
-								entry.target.classList.add('reveal-visible');
-							}
-						});
-					}, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
-					revealTargets.forEach(el => revealObserver.observe(el));
-					// Safety timeout: ensure visibility if observer never fires (e.g., CSP/script errors)
-					setTimeout(() => {
-						const anyHidden = Array.from(revealTargets).some(el => !el.classList.contains('reveal-visible'));
-						if (anyHidden) forceVisible();
-					}, 1200);
-				} else {
-					// No IntersectionObserver support
-					forceVisible();
-				}
-			} catch (e) {
-				// Any runtime error: ensure content is visible
-				forceVisible();
-			}
-		})();
+  <footer class="footer">
+    <div class="wrap footer-sign" aria-hidden="true">Nabbona Prossy</div>
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year"></span> Nabbona Prossy</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
 
-		// Interactive nav highlight using IntersectionObserver
-        const navLinks = document.querySelectorAll('nav a');
-        const sections = Array.from(document.querySelectorAll('section'));
-		const linkById = {};
-		navLinks.forEach(link => {
-			const id = link.getAttribute('href') ? link.getAttribute('href').replace('#','') : '';
-			if (id) linkById[id] = link;
-		});
-		const sectionObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					navLinks.forEach(l => l.classList.remove('nav-active'));
-					const link = linkById[entry.target.id];
-					if (link) link.classList.add('nav-active');
-				}
-			});
-		}, { threshold: 0.5 });
-		sections.forEach(sec => sectionObserver.observe(sec));
+  <dialog id="certDialog" class="cert-dialog" aria-label="Certificate">
+    <form method="dialog"><button class="close" aria-label="Close">&times;</button></form>
+    <button class="nav prev" id="certPrev" aria-label="Previous certificate">&lsaquo;</button>
+    <img id="certDialogImg" src="" alt="">
+    <button class="nav next" id="certNext" aria-label="Next certificate">&rsaquo;</button>
+    <p class="count" id="certCount"></p>
+  </dialog>
 
-        // Button ripple effect
-        document.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const circle = document.createElement('span');
-                circle.className = 'ripple';
-                const rect = btn.getBoundingClientRect();
-                circle.style.left = (e.clientX - rect.left) + 'px';
-                circle.style.top = (e.clientY - rect.top) + 'px';
-                btn.appendChild(circle);
-                setTimeout(() => circle.remove(), 600);
-            });
-        });
+  <script>
+    document.documentElement.classList.add('js');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-		// Animate project cards in grid with IntersectionObserver
-        const projectCards = document.querySelectorAll('.project-card');
-		projectCards.forEach((card, i) => {
-			card.style.transition = `all 0.6s cubic-bezier(.23,1.01,.32,1) ${i * 0.08 + 0.2}s`;
-		});
-		const cardObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('in-view');
-				}
-			});
-		}, { threshold: 0.2 });
-		projectCards.forEach(card => cardObserver.observe(card));
+    // Scroll progress bar + timeline fill
+    const progress = document.getElementById('progress');
+    const timeline = document.querySelector('.timeline');
+    const tItems = timeline ? Array.from(timeline.children) : [];
+    let ticking = false;
+    function onScrollFrame() {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+      if (timeline) {
+        const r = timeline.getBoundingClientRect();
+        const mark = innerHeight * 0.6;
+        const fill = Math.min(1, Math.max(0, (mark - r.top) / r.height));
+        timeline.style.setProperty('--fill', fill.toFixed(3));
+        tItems.forEach(li => li.classList.toggle('reached', li.getBoundingClientRect().top + 8 < mark));
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScrollFrame); } }, { passive: true });
+    window.addEventListener('resize', onScrollFrame);
+    onScrollFrame();
 
-    // Contact form handler removed for real PHP submission
+    // Rotating word in the hero
+    const rot = Array.from(document.querySelectorAll('#rotator > span'));
+    if (!calm && rot.length > 1) {
+      let r = 0;
+      setInterval(() => {
+        const cur = rot[r];
+        cur.classList.remove('on'); cur.classList.add('out');
+        r = (r + 1) % rot.length;
+        rot[r].classList.remove('out'); rot[r].classList.add('on');
+        setTimeout(() => cur.classList.remove('out'), 650);
+      }, 2600);
+    }
 
-    // AJAX contact form handler
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var form = this;
-        var formData = new FormData(form);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'send_mail.php', true);
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                alert(xhr.responseText);
-                form.reset();
-            } else {
-                alert('There was an error sending your message. Please try again later.');
-            }
-        };
-        xhr.send(formData);
+    // Gentle 3D tilt on the photo
+    const heroPhoto = document.getElementById('heroPhoto');
+    const tilt = document.getElementById('photoTilt');
+    if (!calm && finePointer) {
+      heroPhoto.addEventListener('pointermove', e => {
+        const b = heroPhoto.getBoundingClientRect();
+        const x = (e.clientX - b.left) / b.width - .5;
+        const y = (e.clientY - b.top) / b.height - .5;
+        heroPhoto.classList.add('tilting');
+        tilt.style.transform = 'rotateY(' + (x * 10).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg)';
+      });
+      heroPhoto.addEventListener('pointerleave', () => {
+        heroPhoto.classList.remove('tilting');
+        tilt.style.transform = '';
+      });
+    }
+
+    // Light that follows the cursor on the dark band
+    const ink = document.querySelector('.section-ink');
+    if (ink && finePointer) {
+      ink.addEventListener('pointermove', e => {
+        const b = ink.getBoundingClientRect();
+        ink.style.setProperty('--mx', (e.clientX - b.left) + 'px');
+        ink.style.setProperty('--my', (e.clientY - b.top) + 'px');
+        ink.style.setProperty('--glow', '1');
+      });
+      ink.addEventListener('pointerleave', () => ink.style.setProperty('--glow', '.55'));
+    }
+
+    // Staggered entrance for list items
+    const revealGroups = ['.platforms > div', '.cert', '.project-list li', '.skill-row', '.edu > div'];
+    const revealEls = [];
+    revealGroups.forEach(sel => document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.setProperty('--i', i % 6);
+      revealEls.push(el);
+    }));
+    if ('IntersectionObserver' in window && !calm) {
+      const rio = new IntersectionObserver(entries => entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add('in'); rio.unobserve(en.target); }
+      }), { rootMargin: '0px 0px -8% 0px' });
+      revealEls.forEach(el => rio.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('in'));
+    }
+
+    // Hairline under the top bar once the page scrolls
+    const topbar = document.querySelector('.topbar');
+    const onScroll = () => topbar.classList.toggle('scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const siteNav = document.getElementById('siteNav');
+    menuBtn.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      siteNav.classList.toggle('open', !open);
     });
+    siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menuBtn.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('open');
+    }));
 
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        // Hamburger menu toggle for mobile
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinksMenu = document.getElementById('nav-links');
-		function resetNavInlineStyles() {
-			navLinksMenu.style.flexDirection = '';
-			navLinksMenu.style.position = '';
-			navLinksMenu.style.top = '';
-			navLinksMenu.style.right = '';
-			navLinksMenu.style.background = '';
-			navLinksMenu.style.boxShadow = '';
-			navLinksMenu.style.padding = '';
-			navLinksMenu.style.borderRadius = '';
-			navLinksMenu.style.zIndex = '';
-		}
-        function checkMenuDisplay() {
-            if (window.innerWidth <= 800) {
-                menuToggle.style.display = 'block';
-                navLinksMenu.style.display = 'none';
-				menuToggle.setAttribute('aria-expanded', 'false');
-            } else {
-                menuToggle.style.display = 'none';
-				navLinksMenu.style.display = 'flex';
-				menuToggle.setAttribute('aria-expanded', 'false');
-				// Ensure desktop layout isn't affected by previous mobile inline styles
-				resetNavInlineStyles();
-            }
+    // Active nav link
+    const navLinks = siteNav.querySelectorAll('a[href^="#"]');
+    const byId = {};
+    navLinks.forEach(l => byId[l.getAttribute('href').slice(1)] = l);
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting && byId[e.target.id]) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          byId[e.target.id].classList.add('active');
         }
-        menuToggle.addEventListener('click', function() {
-            if (navLinksMenu.style.display === 'none' || navLinksMenu.style.display === '') {
-                navLinksMenu.style.display = 'flex';
-                navLinksMenu.style.flexDirection = 'column';
-                navLinksMenu.style.position = 'absolute';
-                navLinksMenu.style.top = '60px';
-                navLinksMenu.style.right = '10px';
-                navLinksMenu.style.background = '#fff';
-                navLinksMenu.style.boxShadow = '0 4px 16px #0002';
-                navLinksMenu.style.padding = '18px 24px';
-                navLinksMenu.style.borderRadius = '8px';
-                navLinksMenu.style.zIndex = '1000';
-				menuToggle.setAttribute('aria-expanded', 'true');
-            } else {
-				navLinksMenu.style.display = 'none';
-				menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        window.addEventListener('resize', checkMenuDisplay);
-        window.addEventListener('load', checkMenuDisplay);
-        // Hide menu after clicking a link (on mobile)
-        navLinksMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 800) {
-					navLinksMenu.style.display = 'none';
-					resetNavInlineStyles();
-					menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-        // Typewriter effect for roles
-        const roles = [
-            'Software Engineer',
-            'Entrepreneur',
-            'Leader',
-            'Mobile Developer',
-            'Web Developer',
-            'Tech Enthusiast'
-            
-        ];
-        const typedText = document.getElementById('typed-text');
-        let roleIndex = 0;
-        let charIndex = 0;
-        let typing = true;
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
 
-        function typeRole() {
-            if (typing) {
-                if (charIndex < roles[roleIndex].length) {
-                    typedText.innerHTML = '<b>' + roles[roleIndex].slice(0, charIndex + 1) + '</b>';
-                    charIndex++;
-                    setTimeout(typeRole, 80);
-                } else {
-                    typing = false;
-                    setTimeout(typeRole, 1200);
-                }
-            } else {
-                if (charIndex > 0) {
-                    typedText.innerHTML = '<b>' + roles[roleIndex].slice(0, charIndex - 1) + '</b>';
-                    charIndex--;
-                    setTimeout(typeRole, 40);
-                } else {
-                    typing = true;
-                    roleIndex = (roleIndex + 1) % roles.length;
-                    setTimeout(typeRole, 400);
-                }
-            }
-        }
-        typeRole();
-
-        // Modern profile slider logic
-const slider = document.getElementById('profileSlider');
-const sliderInner = document.getElementById('profileSliderInner');
-const slides = Array.from(sliderInner.querySelectorAll('.profile-slide'));
-const dotsContainer = document.getElementById('sliderDots');
-let current = 0;
-
-function updateSlider() {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === current);
+    // Certificate viewer
+    const dlg = document.getElementById('certDialog');
+    const dlgImg = document.getElementById('certDialogImg');
+    const certCount = document.getElementById('certCount');
+    const thumbs = Array.from(document.querySelectorAll('.cert-thumb'));
+    let certIndex = 0;
+    function showCert(i) {
+      certIndex = (i + thumbs.length) % thumbs.length;
+      const t = thumbs[certIndex];
+      dlgImg.style.animation = 'none'; void dlgImg.offsetWidth; dlgImg.style.animation = '';
+      dlgImg.src = t.dataset.src;
+      dlgImg.alt = t.dataset.title;
+      certCount.textContent = (certIndex + 1) + ' of ' + thumbs.length;
+    }
+    thumbs.forEach((btn, i) => btn.addEventListener('click', () => { showCert(i); dlg.showModal(); }));
+    document.getElementById('certPrev').addEventListener('click', () => showCert(certIndex - 1));
+    document.getElementById('certNext').addEventListener('click', () => showCert(certIndex + 1));
+    dlg.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') showCert(certIndex - 1);
+      if (e.key === 'ArrowRight') showCert(certIndex + 1);
     });
-    // Dots
-    dotsContainer.innerHTML = '';
-    slides.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.className = 'slider-dot' + (i === current ? ' active' : '');
-        dot.addEventListener('click', () => {
-            current = i;
-            updateSlider();
-        });
-        dotsContainer.appendChild(dot);
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+    // Contact form
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      statusEl.className = 'form-status';
+      if (!form.checkValidity()) {
+        statusEl.textContent = 'Add your name, a valid email address and a message, then send again.';
+        statusEl.classList.add('error');
+        return;
+      }
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch('send_mail.php', { method: 'POST', body: new FormData(form) });
+        const text = await res.text();
+        if (!res.ok) throw new Error(text);
+        statusEl.textContent = 'Message sent. I’ll reply to you by email.';
+        statusEl.classList.add('ok');
+        form.reset();
+      } catch (err) {
+        statusEl.textContent = 'The message didn’t send. Email me directly at prossienabbona20@gmail.com.';
+        statusEl.classList.add('error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+      }
     });
-}
-function nextSlide() {
-    current = (current + 1) % slides.length;
-    updateSlider();
-}
-let sliderInterval = setInterval(nextSlide, 3500);
-slider.addEventListener('mouseenter', () => clearInterval(sliderInterval));
-slider.addEventListener('mouseleave', () => sliderInterval = setInterval(nextSlide, 3500));
-updateSlider();
-    </script>
+  </script>
 </body>
 </html>
